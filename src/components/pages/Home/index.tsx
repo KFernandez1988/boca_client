@@ -19,6 +19,9 @@ export interface IHomeProps {
             title: titleRef.current.value,
             blog:  blogRef.current.value
         });
+
+        titleRef.current.value = "";
+        blogRef.current.value = "";
      }
 
      
