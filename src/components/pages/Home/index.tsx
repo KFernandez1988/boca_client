@@ -15,7 +15,7 @@ export interface IHomeProps {
         console.log(titleRef.current.value);
         console.log(blogRef.current.value);
 
-        await axios.post('http://localhost:3000/blogs',{
+        await axios.post('https://bocaapi.herokuapp.com/blogs',{
             title: titleRef.current.value,
             blog:  blogRef.current.value
         });
