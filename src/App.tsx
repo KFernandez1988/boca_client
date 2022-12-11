@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes, BrowserRouter as BR, Link } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Blogs from './components/pages/Blogs';
+import { BlogsDetails } from './components/pages/BlogsDetails';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/blogs' element={<Blogs />} /> 
-        <Route path='/blogs/:id' element={<h1>detail blog</h1>}/>
+        <Route path='/blogs/:id' element={<BlogsDetails />}/>
         <Route path='*' element={<h1>404 this pages is not found</h1>} /> 
       </Routes>
     </BR>
