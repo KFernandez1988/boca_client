@@ -1,3 +1,5 @@
+import './index.css'
+
 import axios from 'axios';
 import { useRef } from 'react';
 
@@ -31,12 +33,12 @@ export interface IHomeProps {
 
       <form onSubmit={(e) => submitPost(e)}> 
         <h3>Create a Post</h3>
-        <div>
+        <div className='inputs'>
             <input type="text" ref={titleRef} name='title' placeholder="Post Title"/>
             <textarea ref={blogRef} name='blog' placeholder='Enter Blog Body'>
               
             </textarea>
-            <div>
+            <div className='btns'>
                 <input type="reset" value="Cancel" />
                 <input type="submit" value="Submit" />
             </div>

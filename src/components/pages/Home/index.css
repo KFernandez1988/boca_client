@@ -1,0 +1,38 @@
+form {
+    width: 320px;
+    margin: 18px auto;
+}
+
+
+form .inputs
+ {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+   
+}
+
+form .inputs > * {
+    margin: 8px 35px;
+}
+
+form textarea {
+    height: 400px;
+}
+form .btns {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+form .btns > * {
+    padding: 15px 30px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    background-color: darkkhaki;
+    color: beige;
+}

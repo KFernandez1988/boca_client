@@ -39,14 +39,15 @@ export default function Blogs (props: IBlogsProps) {
 
 blogsDisplay = blogs.map( (b) =>  {
   return (<li key={b.id}>
+    <Link to={`/blogs/${b.id}`}>
       <div>
         <header>
           <h1>{b.title}</h1>
         </header>
         <main>
-          <h3>help</h3>
         </main>
       </div>
+      </Link>
     </li>)
   })
 
