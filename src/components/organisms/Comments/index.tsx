@@ -11,7 +11,7 @@ export function Comments (props: ICommentsProps) {
   const commentRef = React.useRef<any>();
   const {id} = useParams()
 
-  const onSubmit = (e: any) => {
+  const actionSubmit = (e: any) => {
     e.preventDefault();
 
     axios.post('', {
@@ -26,7 +26,7 @@ export function Comments (props: ICommentsProps) {
   return (
     <div>
 
-        <form >
+        <form onSubmit={(event) => actionSubmit(event)}>
             <textarea ref={commentRef} name="" id="" cols={40} rows={30}></textarea>
             <div className="btns">
                 <input type="submit" value="ENTER" />
