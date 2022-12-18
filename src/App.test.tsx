@@ -1,9 +1,11 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { getByText, render, screen } from "@testing-library/react";
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the landing page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  
+  expect(screen.getByRole("h1")).toHaveTextContent(/BOCA/);
+  //expect(screen.getByRole("combobox")).toHaveDisplayValue("Select a breed");
+  expect(screen.getByRole("a")).toHaveTextContent(/auth/);
+  expect(screen.getByRole("nav")).toBeInTheDocument();
 });
