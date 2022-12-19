@@ -20,7 +20,7 @@ export default function Blogs (props: IBlogsProps) {
     if(run) {
 
     const getBlogs = async () => {
-      await axios.get('https://dashboard.heroku.com/apps/bocaapi/blogs').then(json => {
+      await axios.get('https://bocaapi.herokuapp.com/blogs').then(json => {
         console.log("awaiting blogs")
         console.log(json)
         setBlogs(json.data)

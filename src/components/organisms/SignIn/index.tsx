@@ -14,7 +14,7 @@ export default function SignUp (props: ISignUpProps) {
     const submitAction = async (event: any) => {
       event.preventDefault()
 
-      await axios.post('https://dashboard.heroku.com/apps/bocaapi/auth', {
+      await axios.post('https://bocaapi.herokuapp.com/auth', {
         name: nameRef.current.value,
         username: usernameRef.current.value,
         password: passwordRef.current.value,

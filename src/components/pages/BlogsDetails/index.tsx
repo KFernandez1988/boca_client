@@ -21,10 +21,10 @@ export function BlogsDetails (props: IBlogsDetailsProps) {
 
         if(reRender) {
         const getBlog = async () => {
-            await axios.get('https://dashboard.heroku.com/apps/bocaapi/blogs/' + id)
+            await axios.get('https://bocaapi.herokuapp.com/bocaapi/blogs/' + id)
             .then( res => { setBlog(res.data) }).catch( error => console.log(error))
 
-            await axios.get('https://dashboard.heroku.com/apps/bocaapi/comments?blogId='+id+"&token="+ctx.token)
+            await axios.get('https://bocaapi.herokuapp.com/bocaapi/comments?blogId='+id+"&token="+ctx.token)
             .then(res => {setComments(res.data)}).catch(err => { console.error("error on getting comments") })
         }
          console.log("blog deatils", comments)

@@ -19,7 +19,7 @@ export interface IHomeProps {
         console.log(titleRef.current.value);
         console.log(blogRef.current.value);
 
-        await axios.post('https://dashboard.heroku.com/apps/bocaapi/blogs?token='+ctx.token,{
+        await axios.post('https://bocaapi.herokuapp.com/blogs?token='+ctx.token,{
             title: titleRef.current.value,
             blog:  blogRef.current.value
         });

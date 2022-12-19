@@ -7,7 +7,7 @@ export default createContext<any>({
     token: localStorage.getItem('token'),
     login(email: string, password: string ) {
       const  getToken = async () => {
-         await axios.post('https://dashboard.heroku.com/apps/bocaapi/auth/login', {
+         await axios.post('https://bocaapi.herokuapp.com/auth/login', {
           email,
           password
          }).then(res => { 
