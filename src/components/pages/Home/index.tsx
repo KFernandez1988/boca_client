@@ -1,12 +1,14 @@
 import './index.css'
 
 import axios from 'axios';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
+import logContext from '../../../log-context';
 
 export interface IHomeProps {
 }
 
  function Home (props: IHomeProps) {
+  const ctx = useContext(logContext)
      const titleRef = useRef<any>('');
      const blogRef = useRef<any>('');
 
@@ -17,7 +19,7 @@ export interface IHomeProps {
         console.log(titleRef.current.value);
         console.log(blogRef.current.value);
 
-        await axios.post('https://bocaapi.herokuapp.com/blogs',{
+        await axios.post('https://dashboard.heroku.com/apps/bocaapi/blogs?token='+ctx.token,{
             title: titleRef.current.value,
             blog:  blogRef.current.value
         });
@@ -29,6 +31,7 @@ export interface IHomeProps {
      
      return (
     <div>
+      
       <h2>DASHBOARD</h2>
 
       <form onSubmit={(e) => submitPost(e)}> 

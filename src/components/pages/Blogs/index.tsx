@@ -1,7 +1,10 @@
+import './index.css';
+
 import axios from 'axios';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BlogCard } from '../../organisms/BlogCard';
 
 export interface IBlogsProps {
 }
@@ -17,7 +20,7 @@ export default function Blogs (props: IBlogsProps) {
     if(run) {
 
     const getBlogs = async () => {
-      await axios.get('https://bocaapi.herokuapp.com/blogs').then(json => {
+      await axios.get('https://dashboard.heroku.com/apps/bocaapi/blogs').then(json => {
         console.log("awaiting blogs")
         console.log(json)
         setBlogs(json.data)
@@ -25,7 +28,7 @@ export default function Blogs (props: IBlogsProps) {
          () => {
           console.log("get blogs")
          }
-      );
+      ).catch(err => console.log("getting blog error", err));
     }
       getBlogs();
         
@@ -38,24 +41,14 @@ export default function Blogs (props: IBlogsProps) {
   }, [blogs])
 
 blogsDisplay = blogs.map( (b) =>  {
-  return (<li key={b.id}>
-    <Link to={`/blogs/${b.id}`}>
-      <div>
-        <header>
-          <h1>{b.title}</h1>
-        </header>
-        <main>
-        </main>
-      </div>
-      </Link>
-    </li>)
+  return (<BlogCard card={b}/>)
   })
 
   return (
     <div>
       <h1>Blogs Page</h1>
 
-      <ul>
+      <ul className='card-list'>
         {blogsDisplay}
       </ul>
         

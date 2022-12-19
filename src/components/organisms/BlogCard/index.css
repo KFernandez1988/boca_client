@@ -1,0 +1,19 @@
+div.card-blog {
+    background-color: lightslategray;
+    width: 320px;
+    text-align: center;
+    box-shadow: 1px 1px 3px 1px;
+    margin: 30px;
+}
+
+div.card-blog * {
+    text-decoration: none;
+    color: white;
+}
+
+div.card-blog p {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+}

@@ -3,23 +3,36 @@ import "./index.css"
 import axios from 'axios';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
+import { useContext, useState } from "react";
+import logContext from "../../../log-context";
 
 export interface ICommentsProps {
 }
 
+let run = true;
+
 export function Comments (props: ICommentsProps) {
+  const ctx = useContext(logContext);
   const commentRef = React.useRef<any>();
   const {id} = useParams()
 
-  const actionSubmit = (e: any) => {
-    e.preventDefault();
 
-    axios.post('', {
+  const actionSubmit = async (e: any) => {
+  
+    e.preventDefault();
+   try {
+    await axios.post('https://dashboard.heroku.com/apps/bocaapi/comments?token='+ctx.token, {
         blogId: id,
         comment: commentRef.current.value
-    });
+     
+  }).catch(err => console.error("error when posting comment",err));
 
-    commentRef.current.value = "";
+  commentRef.current.value = "";
+  window.location.href = "/blogs/"+id
+   } catch (error) {
+    console.error("actionSubmit fail", error)
+   }
+   
   }
 
 

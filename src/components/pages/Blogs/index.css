@@ -1,0 +1,7 @@
+ul.card-list {
+    margin: 15px auto;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
