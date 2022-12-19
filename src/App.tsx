@@ -1,11 +1,11 @@
 import './App.css';
 
-import { Route, Routes, BrowserRouter as BR, Link, Navigate, useParams } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as BR, Link} from 'react-router-dom';
 import Home from './components/pages/Home';
 import Blogs from './components/pages/Blogs';
 import { BlogsDetails } from './components/pages/BlogsDetails';
 import { Auth } from './components/pages/Auth';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect} from 'react';
 import axios from 'axios';
 import Context from './log-context'
 
@@ -17,6 +17,10 @@ function App() {
   useEffect(() => {
 
   }, [ctx.isLog])
+
+  const loc = window.location.href.split('').pop();
+
+  console.log(loc)
 
   return (
 
@@ -32,7 +36,7 @@ function App() {
                      </>)
           }
 
-{
+          {
             !ctx.isLog && (<>
                      <Link to='auth'><h1>LOGIN</h1></Link>
                      </>)
@@ -42,11 +46,13 @@ function App() {
         </nav>
     </header>
    
-    { !ctx.islog && window.location.href === '/' && <Navigate to="/auth" replace={true} /> }
+    { ((!ctx.isLog) && loc === '/')? window.location.href += "auth" : "" }
+
       <Routes>
 
         
-        { !ctx.isLog && <Route path='/auth' element={<Auth />} />}
+        { !ctx.isLog? (<Route path='/auth' element={<Auth />} />) : "" }
+
         { ctx.isLog && (<>
           <Route path='/' element={<Home />} />
           <Route path='/blogs' element={<Blogs />} /> 
