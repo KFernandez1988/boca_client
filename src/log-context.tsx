@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { redirect } from "react-router-dom";
 
 export default createContext<any>({
-    isLog: localStorage.getItem('isLog') || false,
+    isLog: localStorage.getItem('isLog'),
     token: localStorage.getItem('token'),
     login(email: string, password: string ) {
       const  getToken = async () => {
