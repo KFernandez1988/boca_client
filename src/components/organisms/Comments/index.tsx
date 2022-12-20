@@ -28,7 +28,7 @@ export function Comments (props: ICommentsProps) {
   }).catch(err => console.error("error when posting comment",err));
 
   commentRef.current.value = "";
-  window.location.href = "/blogs/"+id
+  window.location.href = "'https://bocaapi.herokuapp.com/blogs/"+id
    } catch (error) {
     console.error("actionSubmit fail", error)
    }
