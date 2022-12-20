@@ -23,6 +23,6 @@ export default createContext<any>({
       logOut() {
         localStorage.removeItem('isLog');
         localStorage.removeItem('token');
-        return window.location.href += 'https://bocaclient.herokuapp.com/auth'
+        return window.location.href = 'https://bocaclient.herokuapp.com/auth'
       }
     });
