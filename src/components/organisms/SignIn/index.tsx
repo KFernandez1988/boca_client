@@ -20,7 +20,7 @@ export default function SignUp (props: ISignUpProps) {
         password: passwordRef.current.value,
         email: emailRef.current.value,
         pro: proRef.current.value,
-      }).then(() => { window.location.href = '/auth' })
+      }).then(() => { window.location.href += '/auth' })
       .catch(err => console.log("not able to sign up", err))
     }
 

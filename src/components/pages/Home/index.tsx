@@ -15,7 +15,7 @@ export interface IHomeProps {
 
      const submitPost = async (e: any) => {
         e.preventDefault();
-
+        console.log(ctx)
         console.log(titleRef.current.value);
         console.log(blogRef.current.value);
 

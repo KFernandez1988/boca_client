@@ -10,6 +10,8 @@ export function LogIn (props: ILogInProps) {
   const emailRef = useRef<any>('');
   const passRef = useRef<any>('');
 
+
+  console.log(ctx);
   return (
     <div>
         <h1>Log In</h1>
