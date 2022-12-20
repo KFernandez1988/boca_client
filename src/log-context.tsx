@@ -15,7 +15,7 @@ export default createContext<any>({
             if ( res.data) {
             localStorage.setItem('isLog', "1");
             localStorage.setItem('token', res.data);
-            return window.location.href = '/'
+            return window.location.href = 'https://bocaapi.herokuapp.com/'
          }}).catch(err => { console.error("not authenticated", err)});
       }
       getToken();
@@ -23,6 +23,6 @@ export default createContext<any>({
       logOut() {
         localStorage.removeItem('isLog');
         localStorage.removeItem('token');
-        return window.location.href = '/auth'
+        return window.location.href += '/auth'
       }
     });
