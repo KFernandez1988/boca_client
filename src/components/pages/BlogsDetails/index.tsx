@@ -21,10 +21,10 @@ export function BlogsDetails (props: IBlogsDetailsProps) {
 
         if(reRender) {
         const getBlog = async () => {
-            await axios.get('https://bocaapi.herokuapp.com/bocaapi/blogs/' + id)
+            await axios.get('https://bocaapi.herokuapp.com/blogs/' + id)
             .then( res => { setBlog(res.data) }).catch( error => console.log(error))
 
-            await axios.get('https://bocaapi.herokuapp.com/bocaapi/comments?blogId='+id+"&token="+ctx.token)
+            await axios.get('https://bocaapi.herokuapp.com/comments?blogId='+id+"&token="+ctx.token)
             .then(res => {setComments(res.data)}).catch(err => { console.error("error on getting comments") })
         }
          console.log("blog deatils", comments)
@@ -49,6 +49,8 @@ export function BlogsDetails (props: IBlogsDetailsProps) {
 
         <h1>{blog.title}</h1>
         <p>{blog.blog}</p>
+
+
         <Comments />
 
         { comments ? commentsList : <p>Be the first to comment</p> }
