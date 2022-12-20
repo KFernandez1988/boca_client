@@ -15,7 +15,7 @@ export default createContext<any>({
             if ( res.data) {
             localStorage.setItem('isLog', "1");
             localStorage.setItem('token', res.data);
-            return window.location.href = 'https://bocaapi.herokuapp.com/'
+            return window.location.href = 'https://bocaclient.herokuapp.com/'
          }}).catch(err => { console.error("not authenticated", err)});
       }
       getToken();

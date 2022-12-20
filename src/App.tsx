@@ -46,7 +46,7 @@ function App() {
         </nav>
     </header>
    
-    { ((!ctx.isLog) && loc === '/')? window.location.href += "auth" : "" }
+    { ((!ctx.isLog) && loc === '/')? window.location.href = "https://bocaclient.herokuapp.com/auth" : "" }
 
       <Routes>
 
