@@ -21,7 +21,7 @@ export function Comments (props: ICommentsProps) {
   
     e.preventDefault();
    try {
-    await axios.post('https://dashboard.heroku.com/apps/bocaapi/comments?token='+ctx.token, {
+    await axios.post('https://bocaapi.herokuapp.com/comments?token='+ctx.token, {
         blogId: id,
         comment: commentRef.current.value
      
